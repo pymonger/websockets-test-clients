@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      var webSocket = null;
+      window.onload = function() {
+        webSocket = new WebSocket("ws://mozart.kawigi.com:9000");
+        webSocket.onmessage = function(e) {
+          console.log("Got echo: " + e.data);
+        }
+      }
+    </script>
+</head>
+<body>
+<h1>WebSocket Echo Client</h1>
+<button onclick='webSocket.send("Hello, world!");'>
+Send Hello
+</button>
+</body>
+</html>
